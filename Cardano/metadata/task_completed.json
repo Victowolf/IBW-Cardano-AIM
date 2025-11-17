@@ -1,0 +1,8 @@
+{
+  "674": {
+    "type": "task_completed",
+    "task_id": "task-123",
+    "completed_by": "user1",
+    "timestamp": 1700000200
+  }
+}

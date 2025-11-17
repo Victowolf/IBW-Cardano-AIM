@@ -1,0 +1,8 @@
+{
+  "674": {
+    "type": "task_initiated",
+    "task_id": "task-123",
+    "initiator": "user1",
+    "timestamp": 1700000000
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "674": {
+    "type": "files_uploaded",
+    "task_id": "task-123",
+    "uploader": "user1",
+    "timestamp": 1700000100,
+    "merkle_root": "REPLACE_WITH_MERKLE_HEX"
+  }
+}

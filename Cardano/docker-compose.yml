@@ -1,0 +1,63 @@
+version: '3.8'
+services:
+
+  genesis:
+    image: inputoutput/cardano-node:latest
+    container_name: cardano_genesis
+    volumes:
+      - cardano-config:/data
+      - ./bootstrap:/bootstrap:ro
+    entrypoint: ["/bin/sh", "-c"]
+    command: "/bootstrap/init-genesis.sh /data"
+
+  cardano-node:
+    image: inputoutput/cardano-node:latest
+    container_name: cardano_node
+    depends_on:
+      - genesis
+    volumes:
+      - cardano-config:/data
+    ports:
+      - "3001:3001"
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      "cardano-node run
+       --topology /data/topology.json
+       --database-path /data/db
+       --socket-path /data/node.socket
+       --host-addr 0.0.0.0
+       --port 3001
+       --config /data/config.json"
+    restart: unless-stopped
+
+  cli:
+    image: inputoutput/cardano-node:latest
+    container_name: cardano_cli
+    depends_on:
+      - cardano-node
+    volumes:
+      - cardano-config:/data
+    stdin_open: true
+    tty: true
+    entrypoint: ["/bin/sh", "-c"]
+    command: "sleep infinity"
+
+  plutus-builder:
+    image: inputoutput/plutus:latest
+    container_name: plutus_builder
+    working_dir: /workspace
+    volumes:
+      - ./plutus:/workspace:rw
+    entrypoint: ["/bin/sh", "-c"]
+    command: "/workspace/build.sh"
+
+  tools:
+    image: python:3.11-slim
+    container_name: tools
+    volumes:
+      - ./tools:/tools:rw
+    entrypoint: ["/bin/sh", "-c"]
+    command: "sleep infinity"
+
+volumes:
+  cardano-config:
