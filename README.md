@@ -9,21 +9,23 @@ Reinforcement Learning Loops that help agents improve through HR feedback
 The platform automates major HR operations—recruitment, onboarding, payroll, performance evaluation, reporting, meeting summarization, and organizational task management—while ensuring accountability, efficiency, and data integrity.
 
 # 📂 Repository Structure (Brief Overview)
-backend/
-│── Agents 1–5 (AI modules for analytics, news, tasks, hiring, payroll)
-│── Agent6 / Orchestration (central controller)
-│── Apiserver.py (backend API)
-│── mockchain.py (blockchain simulator)
-│── Model.py (ML/RL core)
-│── extracttext.py (PDF/Text parser)
-│── hr_mock_data.json
-│── .env
+```
+    backend/
+    │── Agents 1–5 (AI modules for analytics, news, tasks, hiring, payroll)
+    │── Agent6 / Orchestration (central controller)
+    │── Apiserver.py (backend API)
+    │── mockchain.py (blockchain simulator)
+    │── Model.py (ML/RL core)
+    │── extracttext.py (PDF/Text parser)
+    │── hr_mock_data.json
+    │── .env
 
-Cardano/
-│── bootstrap/ (Hydra initialization)
-│── metadata/ (task logs + file logs Schema)
-│── plutus/ (smart contract for wallet validation)
-│── tools/merkle.py (Merkle tree generator)
+    Cardano/
+    │── bootstrap/ (Hydra initialization)
+    │── metadata/ (task logs + file logs Schema)
+    │── plutus/ (smart contract for wallet validation)
+    │── tools/merkle.py (Merkle tree generator)
+```
 
 # 🧠 Multi-Agent AI System
 
