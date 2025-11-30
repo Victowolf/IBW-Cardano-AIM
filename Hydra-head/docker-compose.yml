@@ -1,0 +1,77 @@
+version: '3.8'
+services:
+  cardano-node:
+    image: inputoutput/cardano-node:latest
+    # This is a placeholder. Build or choose an appropriate Cardano node image for testnet/privatenet.
+    container_name: cardano-node
+    volumes:
+      - ./cardano/config:/config
+      - ./cardano/db:/db
+    command: [
+      "--topology","/config/topology.json",
+      "--config","/config/config.json",
+      "--database-path","/db",
+      "--socket-path","/ipc/node.socket"
+    ]
+    ports:
+      - "3001:3001"
+
+  hydra-node-hr:
+    build: ./hydra-node
+    container_name: hydra-node-hr
+    environment:
+      - NODE_ID=HR
+      - PORT=4001
+      - CARDANO_SOCKET=/ipc/node.socket
+    volumes:
+      - ./nodes/hr:/app/nodes/hr
+      - ./cardano:/ipc:ro
+    depends_on:
+      - cardano-node
+    ports:
+      - "4001:4001"
+      - "9001:9001"
+
+  hydra-node-legal:
+    build: ./hydra-node
+    container_name: hydra-node-legal
+    environment:
+      - NODE_ID=LEGAL
+      - PORT=4002
+      - CARDANO_SOCKET=/ipc/node.socket
+    volumes:
+      - ./nodes/legal:/app/nodes/legal
+      - ./cardano:/ipc:ro
+    depends_on:
+      - cardano-node
+    ports:
+      - "4002:4002"
+      - "9002:9002"
+
+  hydra-node-audit:
+    build: ./hydra-node
+    container_name: hydra-node-audit
+    environment:
+      - NODE_ID=AUDIT
+      - PORT=4003
+      - CARDANO_SOCKET=/ipc/node.socket
+    volumes:
+      - ./nodes/audit:/app/nodes/audit
+      - ./cardano:/ipc:ro
+    depends_on:
+      - cardano-node
+    ports:
+      - "4003:4003"
+      - "9003:9003"
+
+  orchestrator:
+    build: ./orchestrator
+    container_name: hydra-orchestrator
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "9000:9000"
+    depends_on:
+      - hydra-node-hr
+      - hydra-node-legal
+      - hydra-node-audit

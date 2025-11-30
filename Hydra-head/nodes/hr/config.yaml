@@ -1,0 +1,10 @@
+node-id: HR
+port: 4001
+monitoring-port: 9001
+hydra-signing-key: keys/hr.sk
+hydra-verification-key: keys/hr.vk
+peers:
+  - host: hydra-node-legal
+    port: 4002
+  - host: hydra-node-audit
+    port: 4003

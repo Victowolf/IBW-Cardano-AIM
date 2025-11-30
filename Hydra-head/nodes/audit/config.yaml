@@ -1,0 +1,10 @@
+node-id: AUDIT
+port: 4003
+monitoring-port: 9003
+hydra-signing-key: keys/audit.sk
+hydra-verification-key: keys/audit.vk
+peers:
+  - host: hydra-node-hr
+    port: 4001
+  - host: hydra-node-legal
+    port: 4002

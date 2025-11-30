@@ -1,0 +1,16 @@
+{
+  "name": "hydra-orchestrator",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@hydra-sdk/core": "^1.1.5",
+    "@hydra-sdk/bridge": "^1.1.5",
+    "@hydra-sdk/transaction": "^1.1.5",
+    "express": "^4.18.2",
+    "axios": "^1.5.0",
+    "crypto-js": "^4.2.0"
+  }
+}

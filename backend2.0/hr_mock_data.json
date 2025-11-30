@@ -1,0 +1,76 @@
+{
+  "employees": [
+    { "id": 1, "name": "Alice", "department": "Engineering", "skills": ["Python", "ML"], "salary_grade": "A" },
+    { "id": 2, "name": "Bob", "department": "HR", "skills": ["Recruitment"], "salary_grade": "B" },
+    { "id": 3, "name": "Charlie", "department": "Engineering", "skills": ["Java", "Cloud"], "salary_grade": "A" },
+    { "id": 4, "name": "David", "department": "Sales", "skills": ["Negotiation"], "salary_grade": "C" },
+    { "id": 5, "name": "Eva", "department": "Engineering", "skills": ["Python", "Data Analysis"], "salary_grade": "A" }
+  ],
+
+  "Present Year": [
+    {"Recruted": 5, "Resigned": 2, "Fired": 1}
+  ],
+
+  "historical_records": [
+    { "year": 2022, "joined": 5, "exited": 2 },
+    { "year": 2023, "joined": 7, "exited": 3 }
+  ],
+
+  "performance_reports": [
+    { "employee_id": 1, "rating": 4.5 },
+    { "employee_id": 2, "rating": 3.8 },
+    { "employee_id": 3, "rating": 4.0 },
+    { "employee_id": 4, "rating": 3.5 },
+    { "employee_id": 5, "rating": 4.2 }
+  ],
+
+  "exit_interviews": [
+    { "employee_id": 10, "reason": "Better opportunity" },
+    { "employee_id": 11, "reason": "Relocation" },
+    { "employee_id": 12, "reason": "Work-life balance" }
+  ],
+
+  "company_news": [
+    "Company announces expansion of its AI research division in Bangalore to support new ML-driven projects.",
+    "A new health insurance policy has been rolled out for all employees, with enhanced maternity and wellness benefits.",
+    "Sales department achieved a 25% increase in Q3 revenue, new hiring in support and sales roles expected.",
+    "Company adopting hybrid work policy — employees can choose remote or on-site days.",
+    "Two new international clients signed multi-year contracts, requiring additional project managers and data analysts.",
+    "New sustainability initiative launched to reduce carbon emissions by 40% before 2030.",
+    "Partnership announced with a leading university to develop next-generation AI chips.",
+    "Employee engagement survey to be conducted in December for Q4 performance insights."
+  ],
+
+  "notifications": [
+    "CEO: Hire 5 new interns for summer 2025, focusing on AI and data analytics departments.",
+    "CHRO: Submit an onboarding improvement report by end of Q2.",
+    "CEO: Conduct a company-wide employee satisfaction survey before the next board meeting.",
+    "HR Head: Review and update the hybrid work guidelines based on recent feedback."
+  ],
+
+  "attendance_records": [
+    { "employee_id": 1, "working_days": 22, "present_days": 21, "leaves_taken": 1 },
+    { "employee_id": 2, "working_days": 22, "present_days": 20, "leaves_taken": 2 },
+    { "employee_id": 3, "working_days": 22, "present_days": 22, "leaves_taken": 0 },
+    { "employee_id": 4, "working_days": 22, "present_days": 19, "leaves_taken": 3 },
+    { "employee_id": 5, "working_days": 22, "present_days": 22, "leaves_taken": 0 }
+  ],
+
+  "payroll_rules": {
+    "salary_grades": {
+      "A": 90000,
+      "B": 70000,
+      "C": 55000
+    },
+    "tax_deduction_percent": 12,
+    "bonus_policy": {
+      "rating_4_5_and_above": 8000,
+      "rating_4_to_4_49": 5000,
+      "rating_below_4": 2500
+    },
+    "benefits": {
+      "hra_percent": 10,
+      "insurance_fixed": 2000
+    }
+  }
+}
